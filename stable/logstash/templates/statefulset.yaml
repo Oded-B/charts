@@ -76,6 +76,11 @@ spec:
             - name: {{ $key | upper | replace "." "_" }}
               value: {{ $value | quote }}
           {{- end }}
+          {{- if .Values.envSecret }}
+          envFrom:
+          - secretRef:
+              name: {{ .Values.envSecret }}
+          {{- end }}
           resources:
 {{ toYaml .Values.resources | indent 12 }}
           volumeMounts:

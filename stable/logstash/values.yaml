@@ -221,6 +221,8 @@ patterns:
 ## is to maintain one pipeline per chart release. In this way configuration is
 ## simplified and pipelines are more isolated from one another.
 
+envSecret:
+
 inputs:
   main: |-
     input {
